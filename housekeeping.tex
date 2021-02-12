@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{amsopn}
+\usepackage[curve,matrix,arrow]{xy}
+
+
+\renewcommand\familydefault{cmss}
+\newcommand{\qbox}[1]{\quad\hbox{#1}\quad}
+
+\def\dst{\displaystyle}
+
+%thms & defs
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{example}[thm]{Example}
+\newtheorem{examples}[thm]{Examples}
+\newtheorem{remark}[thm]{Remark}
+
+
+
+
+
+%counters
+\renewcommand\theenumi{\roman{enumi}}
+\renewcommand\theenumii{\alph{enumii}}
+%\renewcommand{\thesection}{\Roman{section}}
+\newcounter{ex}\renewcommand\theex{\arabic{ex}}
+\newenvironment{exo}{\begin{flushleft}%
+\textbf{\refstepcounter{ex}Exercise~\theex.}}{\end{flushleft}}
+
+%special text in formulae
+
+
+\newcommand{\dx}[1]{\frac{\mathrm d}{\mathrm d{#1}}}
+\newcommand{\ddx}[2]{\frac{\mathrm d{#1}}{\mathrm d{#2}}}
+\def\dd{\operatorname{d}\!}
+\def\sech{\operatorname{sech}}
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+
+
+\newcommand{\mps}{$\mathrm{ms}^{-1}$}
+\newcommand{\mpss}{$\mathrm{ms}^{-2}$}
+\setlength{\voffset}{-1.6cm}
+\setlength{\hoffset}{-1cm} 
+\setlength{\textwidth}{16.7cm}
+\setlength{\textheight}{24cm}
+
+\makeindex
+
+\begin{document}
+
+\begin{center}
+{\Large{\bf MATH142: Engineering Mathematics II}}\\
+{\large{\bf Weeks 6--10 -- Michaelmas 2019-20}}\\
+Lecturer: Dr Nadia Mazza
+(\textsf{n.mazza@lancaster.ac.uk}) \quad 
+Office: Fylde B41
+\end{center}
+
+\tableofcontents
+\vfill
+
+\newpage
+\section{Housekeeping}\label{sec:housekeeping}
+
+\subsection{Syllabus}
+
+\begin{itemize}\item
+  The limit of a function of a real variable.
+\item Continuity of a function of a real variable.
+\item The definition of the derivative as a limit.
+\item The graphical interpretation of the derivative.
+\item Rules of differentiation.
+\item Derivatives of standard functions.
+\item Higher-order derivatives.
+\item Stationary points and their classification.
+\item Techniques of differentiation.
+\item L'H\^opital's rule.
+\item Definite and indefinite integrals.
+\item Integration as antiderivative.
+\item Integration of standard functions.
+\item Techniques of integration.
+\item Approximation of definite integrals using Taylor and Maclaurin series.
+\item Selection of applications of integration.
+\end{itemize}
+
+\subsection{Recommended text books}
+\begin{itemize}
+\item A. Croft, R. Davison, M. Hargreaves and J. Flint, {\em
+  Engineering Mathematics: A Foundation for Electronic, Electrical,
+  Communications and Systems Engineers}, fourth edition, 2013, Pearson
+  Education Ltd, ISBN 978­0­273­71977­9.
+\item
+K.A. Stroud with D. J. Booth, {\em Engineering Mathematics}, seventh
+edition, 2013, Palgrave Macmillan Ltd, ISBN 978­1­137­03120­4
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%
+\subsection{Lectures and class exercises}
+
+
+The notes for this course are complete and, together with the workshop
+questions and assessed exercises, provide all the information you
+need. It is recommended that you take your own notes from the lectures
+and additional material. 
+Examples are given in lectures and in the notes, and further practice
+will be gained by working through exercises during workshops,
+self-study and lecture time. 
+You must actively participate in the
+activities as directed by your lecturer and tutors.
+There are 3 x 1h lectures per week and two workshops per week, as
+indicated in your timetable. Further details are on the Moodle page
+for the module.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Learning outcomes}
+
+{\bf Subject specific}
+
+On successful completion of this module, the student should be able
+to: 
+
+\begin{enumerate}
+\item understand the meaning of a derivative, both algebraically and
+graphically; 
+\item differentiate simple functions, products and quotients
+and use a variety of techniques; 
+\item use L'H\^opital's rule to find limits of functions;
+\item understand the meaning of definite and indefinite integrals;
+\item integrate expressions directly, by parts and by substitution; 
+\item apply integration to calculate physical quantities; 
+\item find Taylor and Maclaurin series, and use these to estimate 
+definite integrals;
+\end{enumerate}
+
+\vspace{.3cm}
+{\bf General knowledge, understanding and skills}
+
+On successful completion of this module, the student should be able to
+use a range of mathematical techniques from differential and integral
+calculus to solve engineering problems, 
+present their work in a clear and coherent manner
+Demonstrate basic problem solving skills 
+
+\subsection{Assessment}
+
+\begin{tabular}{l}
+20\% equally weighted weekly coursework \\
+20\% end-of-module test\\
+60\% end-of-year examination
+\end{tabular}
+
+\smallskip
+The weekly coursework and the end-of-module test form the 40\%
+coursework part of your final mark for the module.
+
+
+\smallskip
+{\bf MATH142 coursework must be submitted no later than 12 NOON WEDNESDAY.} 
+
+Further details on the MATH142 Moodle page.
+
+\smallskip
+Any late
+submission is subject to penalties. Under no circumstances can
+coursework be accepted after the answers are given out at the
+following workshop or published online. 
+Feedback shall be returned promptly.
+
+\smallskip
+{\bf End-of-module test}
+
+\smallskip
+The end-of-module test will take place in week 10, and you will be informed
+nearer the time about the exact date, time and venue. Please refer to
+your timetable and to the MATH142 Moodle page.
+It is {\bf your responsibility} to complete and submit the test on
+time. 
+If you are ill, a medical certificate must be
+provided to the Teaching Office.
+{\bf If written confirmation of the reason for your absence is not
+received, you will be given a mark of zero.}
+
+\smallskip
+{\bf Examination}
+
+\smallskip
+The examination will take place during the main exam session in
+summer. You will be informed by Student Registry of the examination
+processes. It is {\bf your responsibility} to attend these
+examinations on time unless prevented by ill health.
+
+
+\end{document}
